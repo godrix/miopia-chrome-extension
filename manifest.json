@@ -1,0 +1,17 @@
+{
+  "name": "Miopia",
+  "action": {},
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "description": "Turns the page blur when you click the icon",
+  "icons": {
+    "128": "icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
