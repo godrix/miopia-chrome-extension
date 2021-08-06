@@ -16,7 +16,7 @@ function reddenPage() {
 
   switch (hostname) {
     case 'web.whatsapp.com':
-      addCss(`<style>
+      addCss(`<style id="style-inject>
       .copyable-text, ._3m_Xw, img{
         filter: blur(4px);
       }
