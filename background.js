@@ -4,9 +4,14 @@ function reddenPage() {
   const hostname = window.location.hostname;
 
   function addCss(css) {
-    document.head.insertAdjacentHTML('beforeend', `
-    ${css}
-    `);
+    const element = document.querySelector('#style-inject');
+    if (!element) {
+      document.head.insertAdjacentHTML('beforeend', `
+        ${css}
+        `);
+    } else {
+      document.head.removeChild(element);
+    }
   }
 
   switch (hostname) {
@@ -22,7 +27,7 @@ function reddenPage() {
       </style>`);
       break;
     case 'mail.google.com':
-      addCss(`<style>
+      addCss(`<style id="style-inject">
       tr, img{
         filter: blur(4px);
       }
